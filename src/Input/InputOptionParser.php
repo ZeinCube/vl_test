@@ -7,6 +7,9 @@ class InputOptionParser
     private const UPTIME_PERCENT_OPTION = 'u';
     private const RESPONSE_TIME_LIMIT_OPTION = 't';
 
+    /**
+     * @return Input
+     */
     public function parseInputOptions(): Input
     {
         $optionsString = sprintf('%s:%s:', self::UPTIME_PERCENT_OPTION, self::RESPONSE_TIME_LIMIT_OPTION);

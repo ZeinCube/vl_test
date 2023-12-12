@@ -12,12 +12,12 @@ class InputOptionsValidator
      */
     public function validate(Input $input): void
     {
-        if (!is_float($input->getUptimePercent()) && $input->getUptimePercent() >= 0) {
-            throw new ValidationException('Uptime percent should be numeric value');
+        if (!is_float($input->getUptimePercent()) || $input->getUptimePercent() >= 0) {
+            throw new ValidationException('Uptime percent should be numeric value and equal or greater than 0');
         }
 
-        if (!is_float($input->getResponseTimeLimit()) && $input->getResponseTimeLimit() > 0) {
-            throw new ValidationException('Response time Limit should be numeric value');
+        if (!is_float($input->getResponseTimeLimit()) || $input->getResponseTimeLimit() > 0) {
+            throw new ValidationException('Response time Limit should be numeric value and greater than 0');
         }
     }
 }

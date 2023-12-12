@@ -9,6 +9,11 @@ class Output
 {
     private const DATE_PRINT_FORMAT = 'd:M:Y H:i:s';
 
+    /**
+     * @param Interval $interval
+     *
+     * @return void
+     */
     public static function printInterval(Interval $interval): void
     {
         $startDate = $interval->getStartTime()->format(self::DATE_PRINT_FORMAT);
@@ -20,6 +25,12 @@ class Output
         echo $string;
     }
 
+    /**
+     * @param string $message
+     * @param Exception $exception
+     *
+     * @return void
+     */
     public static function printException(string $message, Exception $exception): void
     {
         $string = sprintf("%s: %s", $message, $exception->getMessage());

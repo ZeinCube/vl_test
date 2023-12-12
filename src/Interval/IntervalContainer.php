@@ -36,8 +36,8 @@ class IntervalContainer implements Iterator
     {
         $current = $this->getCurrent();
 
-        if (($current === null || $current->isClosed()) && $log->isFailure() ) {
-            $this->intervals[]= new Interval($log);
+        if (($current === null || $current->isClosed()) && $log->isFailure()) {
+            $this->intervals[] = new Interval($log);
 
             return $this;
         }
@@ -47,6 +47,11 @@ class IntervalContainer implements Iterator
         return $this;
     }
 
+    /**
+     * Closes current interval for adding logs
+     *
+     * @return $this
+     */
     public function closeCurrent(): self
     {
         $current = $this->getCurrent();
@@ -58,14 +63,6 @@ class IntervalContainer implements Iterator
         $current->close();
 
         return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getIntervals(): array
-    {
-        return $this->intervals;
     }
 
     public function current(): Interval

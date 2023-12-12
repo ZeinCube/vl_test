@@ -10,6 +10,11 @@ class LogParser
     private const RESPONSE_CODE_KEY = 8;
     private const RESPONSE_TIME_KEY = 10;
 
+    /**
+     * @param string $log
+     *
+     * @return Log
+     */
     public function parseLog(string $log): Log
     {
         $trans = [' ' => ' ', '[' => '', ']' => ''];
@@ -18,8 +23,8 @@ class LogParser
 
         $logTime = DateTime::createFromFormat('d/m/Y:H:i:s', $fields[self::DATE_KEY]);
 
-        $responseCode = (float) $fields[self::RESPONSE_CODE_KEY];
-        $responseTime = (float) $fields[self::RESPONSE_TIME_KEY];
+        $responseCode = (float)$fields[self::RESPONSE_CODE_KEY];
+        $responseTime = (float)$fields[self::RESPONSE_TIME_KEY];
 
         return new Log($responseCode, $responseTime, $logTime);
     }

@@ -26,11 +26,6 @@ class IntervalHandler
         return $log->getResponseCode() > 500 || $log->getResponseTime() > $this->responseTimeLimit;
     }
 
-    public function checkIsIntervalFault(Interval $interval): bool
-    {
-        return self::availabilityLevel($interval->getFaultLogsCount(), $interval->getLogsCount()) < $this->availabilityMinimumLevel;
-    }
-
     public function dryCheckIsIntervalFault(Interval $interval, Log $log): bool
     {
         $failureCount = $interval->getFaultLogsCount();

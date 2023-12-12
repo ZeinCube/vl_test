@@ -13,8 +13,16 @@ class Interval
     private int $logsCount = 0;
     private int $faultLogsCount = 0;
 
+    /**
+     * Flag to close interval for editing
+     *
+     * @var bool
+     */
     private bool $closed = false;
 
+    /**
+     * @param Log $log
+     */
     public function __construct(Log $log)
     {
         $this->startTime = $log->getLogTime();
@@ -27,6 +35,11 @@ class Interval
         }
     }
 
+    /**
+     * Closes interval for adding logs
+     *
+     * @return $this
+     */
     public function close(): self
     {
         $this->closed = true;
@@ -50,6 +63,11 @@ class Interval
         return $this->endTime;
     }
 
+    /**
+     * @param Log $log
+     *
+     * @return $this
+     */
     public function addLog(Log $log): self
     {
         $this->incrementLogCount();
