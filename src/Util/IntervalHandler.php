@@ -23,7 +23,7 @@ class IntervalHandler
 
     public function checkIsFailureLog(Log $log): bool
     {
-        return $log->getResponseCode() > 500 || $log->getResponseTime() > $this->responseTimeLimit;
+        return $log->getResponseCode() >= 500 || $log->getResponseTime() > $this->responseTimeLimit;
     }
 
     public function dryCheckIsIntervalFault(Interval $interval, Log $log): bool
