@@ -12,6 +12,7 @@ make install
 ```bash
 make docker-up-local
 make docker-exec-php
+make install
 ```
 
 # Testing
