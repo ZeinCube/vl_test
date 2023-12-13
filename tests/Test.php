@@ -11,7 +11,7 @@ use App\Log\LogProcessor;
 use App\Validator\InputOptionsValidator;
 use PHPUnit\Framework\TestCase;
 
-require '../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 class Test extends TestCase
 {

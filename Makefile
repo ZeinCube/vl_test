@@ -11,3 +11,6 @@ docker-up-local:
 
 docker-exec-php:
 	docker-compose $(COMPOSE_FILE) exec php bash
+
+test:
+	vendor/phpunit/phpunit/phpunit tests/Test.php --process-isolation --no-configuration
