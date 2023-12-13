@@ -4,7 +4,7 @@ use App\Exception\ValidationException;
 use App\Input\InputOptionParser;
 use App\Interval\IntervalContainer;
 use App\Log\LogParser;
-use App\Util\IntervalHandler;
+use App\Log\LogProcessor;
 use App\Util\Output;
 use App\Validator\InputOptionsValidator;
 
@@ -15,7 +15,7 @@ execute();
 function execute(): void
 {
     $inputParser = new InputOptionParser();
-    $input = $inputParser->parseInputOptions();
+    $input = $inputParser->getAndParseOptions();
     $validator = new InputOptionsValidator();
 
     try {
@@ -26,30 +26,22 @@ function execute(): void
         return;
     }
 
-    $logParser = new LogParser();
-    $limitChecker = new IntervalHandler($input->getUptimePercent(), $input->getResponseTimeLimit());
-    $intervalContainer = new IntervalContainer();
+    $logParser    = new LogParser();
+    $logProcessor = new LogProcessor($input);
 
     while ($line = fgets(STDIN)) {
         $log = $logParser->parseLog($line);
 
-        if ($limitChecker->checkIsFailureLog($log)) {
-            $log->setFailure(true);
-        }
-
-        $currentInterval = $intervalContainer->getCurrent();
-        if ($currentInterval !== null && !$limitChecker->dryCheckIsIntervalFault($currentInterval, $log)) {
-            $intervalContainer->closeCurrent();
-        }
-
-        $intervalContainer->addLogToInterval($log);
+        $logProcessor->processLog($log);
     }
 
-    printIntervals($intervalContainer);
+    printIntervals($logProcessor->getIntervalContainer());
 }
 
 function printIntervals(IntervalContainer $container): void
 {
+    $container->sortIntervals();
+
     foreach ($container as $interval) {
         Output::printInterval($interval);
     }

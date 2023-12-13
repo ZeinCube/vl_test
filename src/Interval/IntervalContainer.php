@@ -4,9 +4,10 @@ namespace App\Interval;
 
 use App\Exception\HasNoOpenedIntervalException;
 use App\Log\Log;
+use Countable;
 use Iterator;
 
-class IntervalContainer implements Iterator
+class IntervalContainer implements Iterator, Countable
 {
     /**
      * @var Interval[]
@@ -88,5 +89,22 @@ class IntervalContainer implements Iterator
     public function rewind(): void
     {
         $this->index = 0;
+    }
+
+    public function sortIntervals(): void
+    {
+        usort($this->intervals, static function(Interval $a, Interval $b) {
+
+            if ($a->getStartTime() === $b->getStartTime()) {
+                return 0;
+            }
+
+            return $a < $b ? -1 : 1;
+        });
+    }
+
+    public function count(): int
+    {
+        return count($this->intervals);
     }
 }
