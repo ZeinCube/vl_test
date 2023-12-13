@@ -150,24 +150,24 @@ class Test extends TestCase
         $this->assertCount(0, $logProcessor->getIntervalContainer());
 
         $logs  = [
-            '192.168.32.181 - - [14/06/2017:16:50:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 500 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:51:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:47:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:48:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:49:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:47:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:50:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 500 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:51:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:52:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:53:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:54:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:55:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 500 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:56:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:57:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:59:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 500 2 30.164372 "-" "@list-item-updater" prio:0',
         ];
 
         $logProcessor = new LogProcessor($input);
