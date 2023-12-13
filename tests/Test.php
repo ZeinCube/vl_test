@@ -167,7 +167,7 @@ class Test extends TestCase
             '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
             '192.168.32.181 - - [14/06/2017:16:58:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 30.164372 "-" "@list-item-updater" prio:0',
-            '192.168.32.181 - - [14/06/2017:16:59:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 500 2 30.164372 "-" "@list-item-updater" prio:0',
+            '192.168.32.181 - - [14/06/2017:16:59:02 +1000] "PUT /rest/v1.4/documents?zone=default&_rid=6076537c HTTP/1.1" 200 2 31.164372 "-" "@list-item-updater" prio:0',
         ];
 
         $logProcessor = new LogProcessor($input);
